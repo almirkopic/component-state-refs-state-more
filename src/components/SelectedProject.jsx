@@ -1,6 +1,7 @@
+import React from "react";
 import Tasks from "./Tasks";
 
-export default function SelectedProject({
+function SelectedProject({
   project,
   onDelete,
   onAddTask,
@@ -12,6 +13,7 @@ export default function SelectedProject({
     month: "short",
     day: "numeric",
   });
+
   return (
     <div className="w-[35rem] mt-16">
       <header className="pb-4 mb-4 border-b-2 border-stone-300">
@@ -31,7 +33,9 @@ export default function SelectedProject({
           {project.description}
         </p>
       </header>
-      <Tasks onAdd={onAddTask} onDelete={onDeleteTask} tasks={tasks} />
+      <Tasks tasks={tasks} onAdd={onAddTask} onDelete={onDeleteTask} />
     </div>
   );
 }
+
+export default SelectedProject;
